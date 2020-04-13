@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98a052b0-50d2-4abb-9bbb-938e9f402a31" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\develop\MAVEN\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apachemaven" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aPwf7k6GrEToot9EEZl7S2Bcw5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resume-center/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\develop\ideaproject\resume\resume-center\src\main\resources" />
+      <recent name="D:\develop\ideaproject\resume\resume-center\src\main\resources\static" />
+      <recent name="D:\develop\ideaproject\resume\resume-center\src\main\java\com\txs\resume\resumecenter\pojo" />
+      <recent name="D:\develop\ideaproject\resume\resume-center\src\main\java\com\txs\resume\resumecenter" />
+      <recent name="D:\develop\ideaproject\resume\resume-user\src\main\java\com\txs\resume\resumeuser\utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.txs.resume.resumeuser.config" />
+      <recent name="com.txs.resume.resumeuser.interceptor" />
+      <recent name="com.txs.resume.resumecenter.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\develop\ideaproject\resume\resume-user\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ResumeCenterApplication">
+    <configuration name="All in resume-user (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="resume-user" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in resume-user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="resume-user" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/resume-user" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="resume-user [mybatis-generator:generate...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/resume-user" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.txs.resume.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResumeCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="resume-center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.txs.resume.resumecenter.ResumeCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResumeEmailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="resume-email" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.txs.resume.resumeemail.ResumeEmailApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResumeUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="resume-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.txs.resume.resumeuser.ResumeUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.All in resume-user" />
+      <item itemvalue="JUnit.All in resume-user (1)" />
+      <item itemvalue="Maven.resume-user [mybatis-generator:generate...]" />
+      <item itemvalue="Spring Boot.ResumeUserApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ResumeCenterApplication" />
+      <item itemvalue="Spring Boot.ResumeEmailApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in resume-user (1)" />
+        <item itemvalue="JUnit.All in resume-user" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.14231601" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98a052b0-50d2-4abb-9bbb-938e9f402a31" name="Default Changelist" comment="" />
+      <created>1586650636841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586650636841</updated>
+      <workItem from="1586650640970" duration="34496000" />
+      <workItem from="1586733607307" duration="32183000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="181" key="#Project_Structure" timestamp="1586766598667">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1586766598667" />
+    <state x="414" y="177" width="1092" height="734" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586665430400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="177" width="1092" height="734" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586665430400" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1586684485590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586684485590" />
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586761885332">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586761885332" />
+    <state x="719" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586738837597">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="719" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1586738837597" />
+    <state width="1584" height="302" key="GridCell.Tab.0.bottom" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.0.center" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.0.left" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.0.right" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.1.bottom" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.1.center" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.1.left" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.1.right" timestamp="1586771713337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586771713337" />
+    <state width="1584" height="302" key="GridCell.Tab.2.bottom" timestamp="1586769400485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586769400485" />
+    <state width="1584" height="302" key="GridCell.Tab.2.center" timestamp="1586769400485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586769400485" />
+    <state width="1584" height="302" key="GridCell.Tab.2.left" timestamp="1586769400485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586769400485" />
+    <state width="1584" height="302" key="GridCell.Tab.2.right" timestamp="1586769400485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1584" height="302" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586769400485" />
+    <state x="490" y="177" key="Maven.ArtifactSearchDialog" timestamp="1586687154911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="177" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586687154911" />
+    <state x="440" y="97" key="SettingsEditor" timestamp="1586739305220">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586739305220" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1586761240233">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1586761240233" />
+    <state x="334" y="223" key="new project wizard" timestamp="1586652656717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="223" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1586652656717" />
+    <state x="1039" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1586765955539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1039" y="259" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586765955539" />
+  </component>
+</project>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txs.resume.resumeuser.mapper.TblRsmResumeMapper" >
+  <resultMap id="BaseResultMap" type="com.txs.resume.resumeuser.pojo.TblRsmResume" >
+    <id column="RS_ID" property="rsId" jdbcType="INTEGER" />
+    <result column="RS_URID" property="rsUrid" jdbcType="INTEGER" />
+    <result column="RS_NAME" property="rsName" jdbcType="VARCHAR" />
+    <result column="RS_CREATE_TIME" property="rsCreateTime" jdbcType="VARCHAR" />
+    <result column="RS_UPDATE_TIME" property="rsUpdateTime" jdbcType="VARCHAR" />
+    <result column="RS_DEL_IND" property="rsDelInd" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RS_ID, RS_URID, RS_NAME, RS_CREATE_TIME, RS_UPDATE_TIME, RS_DEL_IND
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_rsm_resume
+    where RS_ID = #{rsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_rsm_resume
+    where RS_ID = #{rsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResume" >
+    insert into tbl_rsm_resume (RS_ID, RS_URID, RS_NAME, 
+      RS_CREATE_TIME, RS_UPDATE_TIME, RS_DEL_IND
+      )
+    values (#{rsId,jdbcType=INTEGER}, #{rsUrid,jdbcType=INTEGER}, #{rsName,jdbcType=VARCHAR}, 
+      #{rsCreateTime,jdbcType=VARCHAR}, #{rsUpdateTime,jdbcType=VARCHAR}, #{rsDelInd,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResume" >
+    insert into tbl_rsm_resume
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rsId != null" >
+        RS_ID,
+      </if>
+      <if test="rsUrid != null" >
+        RS_URID,
+      </if>
+      <if test="rsName != null" >
+        RS_NAME,
+      </if>
+      <if test="rsCreateTime != null" >
+        RS_CREATE_TIME,
+      </if>
+      <if test="rsUpdateTime != null" >
+        RS_UPDATE_TIME,
+      </if>
+      <if test="rsDelInd != null" >
+        RS_DEL_IND,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rsId != null" >
+        #{rsId,jdbcType=INTEGER},
+      </if>
+      <if test="rsUrid != null" >
+        #{rsUrid,jdbcType=INTEGER},
+      </if>
+      <if test="rsName != null" >
+        #{rsName,jdbcType=VARCHAR},
+      </if>
+      <if test="rsCreateTime != null" >
+        #{rsCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsUpdateTime != null" >
+        #{rsUpdateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsDelInd != null" >
+        #{rsDelInd,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResume" >
+    update tbl_rsm_resume
+    <set >
+      <if test="rsUrid != null" >
+        RS_URID = #{rsUrid,jdbcType=INTEGER},
+      </if>
+      <if test="rsName != null" >
+        RS_NAME = #{rsName,jdbcType=VARCHAR},
+      </if>
+      <if test="rsCreateTime != null" >
+        RS_CREATE_TIME = #{rsCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsUpdateTime != null" >
+        RS_UPDATE_TIME = #{rsUpdateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsDelInd != null" >
+        RS_DEL_IND = #{rsDelInd,jdbcType=CHAR},
+      </if>
+    </set>
+    where RS_ID = #{rsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResume" >
+    update tbl_rsm_resume
+    set RS_URID = #{rsUrid,jdbcType=INTEGER},
+      RS_NAME = #{rsName,jdbcType=VARCHAR},
+      RS_CREATE_TIME = #{rsCreateTime,jdbcType=VARCHAR},
+      RS_UPDATE_TIME = #{rsUpdateTime,jdbcType=VARCHAR},
+      RS_DEL_IND = #{rsDelInd,jdbcType=CHAR}
+    where RS_ID = #{rsId,jdbcType=INTEGER}
+  </update>
+</mapper>

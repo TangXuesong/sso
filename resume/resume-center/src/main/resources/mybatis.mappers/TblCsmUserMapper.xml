@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txs.resume.resumeuser.mapper.TblCsmUserMapper" >
+  <resultMap id="BaseResultMap" type="com.txs.resume.resumeuser.pojo.TblCsmUser" >
+    <id column="UR_ID" property="urId" jdbcType="INTEGER" />
+    <result column="UR_NICKNAME" property="urNickname" jdbcType="VARCHAR" />
+    <result column="UR_EMAIL" property="urEmail" jdbcType="VARCHAR" />
+    <result column="UR_PASSWORD" property="urPassword" jdbcType="VARCHAR" />
+    <result column="UR_SEX" property="urSex" jdbcType="CHAR" />
+    <result column="UR_AGE" property="urAge" jdbcType="INTEGER" />
+    <result column="UR_REGISTER_TIME" property="urRegisterTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UR_ID, UR_NICKNAME, UR_EMAIL, UR_PASSWORD, UR_SEX, UR_AGE, UR_REGISTER_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_csm_user
+    where UR_ID = #{urId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_csm_user
+    where UR_ID = #{urId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txs.resume.resumeuser.pojo.TblCsmUser" >
+    insert into tbl_csm_user (UR_ID, UR_NICKNAME, UR_EMAIL, 
+      UR_PASSWORD, UR_SEX, UR_AGE, 
+      UR_REGISTER_TIME)
+    values (#{urId,jdbcType=INTEGER}, #{urNickname,jdbcType=VARCHAR}, #{urEmail,jdbcType=VARCHAR}, 
+      #{urPassword,jdbcType=VARCHAR}, #{urSex,jdbcType=CHAR}, #{urAge,jdbcType=INTEGER}, 
+      #{urRegisterTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.txs.resume.resumeuser.pojo.TblCsmUser" >
+    insert into tbl_csm_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="urId != null" >
+        UR_ID,
+      </if>
+      <if test="urNickname != null" >
+        UR_NICKNAME,
+      </if>
+      <if test="urEmail != null" >
+        UR_EMAIL,
+      </if>
+      <if test="urPassword != null" >
+        UR_PASSWORD,
+      </if>
+      <if test="urSex != null" >
+        UR_SEX,
+      </if>
+      <if test="urAge != null" >
+        UR_AGE,
+      </if>
+      <if test="urRegisterTime != null" >
+        UR_REGISTER_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="urId != null" >
+        #{urId,jdbcType=INTEGER},
+      </if>
+      <if test="urNickname != null" >
+        #{urNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="urEmail != null" >
+        #{urEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="urPassword != null" >
+        #{urPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="urSex != null" >
+        #{urSex,jdbcType=CHAR},
+      </if>
+      <if test="urAge != null" >
+        #{urAge,jdbcType=INTEGER},
+      </if>
+      <if test="urRegisterTime != null" >
+        #{urRegisterTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txs.resume.resumeuser.pojo.TblCsmUser" >
+    update tbl_csm_user
+    <set >
+      <if test="urNickname != null" >
+        UR_NICKNAME = #{urNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="urEmail != null" >
+        UR_EMAIL = #{urEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="urPassword != null" >
+        UR_PASSWORD = #{urPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="urSex != null" >
+        UR_SEX = #{urSex,jdbcType=CHAR},
+      </if>
+      <if test="urAge != null" >
+        UR_AGE = #{urAge,jdbcType=INTEGER},
+      </if>
+      <if test="urRegisterTime != null" >
+        UR_REGISTER_TIME = #{urRegisterTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UR_ID = #{urId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txs.resume.resumeuser.pojo.TblCsmUser" >
+    update tbl_csm_user
+    set UR_NICKNAME = #{urNickname,jdbcType=VARCHAR},
+      UR_EMAIL = #{urEmail,jdbcType=VARCHAR},
+      UR_PASSWORD = #{urPassword,jdbcType=VARCHAR},
+      UR_SEX = #{urSex,jdbcType=CHAR},
+      UR_AGE = #{urAge,jdbcType=INTEGER},
+      UR_REGISTER_TIME = #{urRegisterTime,jdbcType=VARCHAR}
+    where UR_ID = #{urId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from tbl_csm_user
+    where UR_EMAIL = #{email,jdbcType=VARCHAR}
+  </select>
+</mapper>

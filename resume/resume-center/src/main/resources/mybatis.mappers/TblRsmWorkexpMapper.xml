@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txs.resume.resumeuser.mapper.TblRsmWorkexpMapper" >
+  <resultMap id="BaseResultMap" type="com.txs.resume.resumeuser.pojo.TblRsmWorkexp" >
+    <id column="WP_ID" property="wpId" jdbcType="INTEGER" />
+    <result column="WP_RLID" property="wpRlid" jdbcType="INTEGER" />
+    <result column="WP_COMPNAME" property="wpCompname" jdbcType="VARCHAR" />
+    <result column="WP_STARTTIME" property="wpStarttime" jdbcType="VARCHAR" />
+    <result column="WP_ENDTIME" property="wpEndtime" jdbcType="VARCHAR" />
+    <result column="WP_OCCUPATION" property="wpOccupation" jdbcType="VARCHAR" />
+    <result column="WP_WORKCONTEXT" property="wpWorkcontext" jdbcType="VARCHAR" />
+    <result column="WP_CREATE_TIME" property="wpCreateTime" jdbcType="VARCHAR" />
+    <result column="WP_UPDATE_TIME" property="wpUpdateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    WP_ID, WP_RLID, WP_COMPNAME, WP_STARTTIME, WP_ENDTIME, WP_OCCUPATION, WP_WORKCONTEXT, 
+    WP_CREATE_TIME, WP_UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_rsm_workexp
+    where WP_ID = #{wpId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_rsm_workexp
+    where WP_ID = #{wpId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txs.resume.resumeuser.pojo.TblRsmWorkexp" >
+    insert into tbl_rsm_workexp (WP_ID, WP_RLID, WP_COMPNAME, 
+      WP_STARTTIME, WP_ENDTIME, WP_OCCUPATION, 
+      WP_WORKCONTEXT, WP_CREATE_TIME, WP_UPDATE_TIME
+      )
+    values (#{wpId,jdbcType=INTEGER}, #{wpRlid,jdbcType=INTEGER}, #{wpCompname,jdbcType=VARCHAR}, 
+      #{wpStarttime,jdbcType=VARCHAR}, #{wpEndtime,jdbcType=VARCHAR}, #{wpOccupation,jdbcType=VARCHAR}, 
+      #{wpWorkcontext,jdbcType=VARCHAR}, #{wpCreateTime,jdbcType=VARCHAR}, #{wpUpdateTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmWorkexp" >
+    insert into tbl_rsm_workexp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wpId != null" >
+        WP_ID,
+      </if>
+      <if test="wpRlid != null" >
+        WP_RLID,
+      </if>
+      <if test="wpCompname != null" >
+        WP_COMPNAME,
+      </if>
+      <if test="wpStarttime != null" >
+        WP_STARTTIME,
+      </if>
+      <if test="wpEndtime != null" >
+        WP_ENDTIME,
+      </if>
+      <if test="wpOccupation != null" >
+        WP_OCCUPATION,
+      </if>
+      <if test="wpWorkcontext != null" >
+        WP_WORKCONTEXT,
+      </if>
+      <if test="wpCreateTime != null" >
+        WP_CREATE_TIME,
+      </if>
+      <if test="wpUpdateTime != null" >
+        WP_UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wpId != null" >
+        #{wpId,jdbcType=INTEGER},
+      </if>
+      <if test="wpRlid != null" >
+        #{wpRlid,jdbcType=INTEGER},
+      </if>
+      <if test="wpCompname != null" >
+        #{wpCompname,jdbcType=VARCHAR},
+      </if>
+      <if test="wpStarttime != null" >
+        #{wpStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpEndtime != null" >
+        #{wpEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpOccupation != null" >
+        #{wpOccupation,jdbcType=VARCHAR},
+      </if>
+      <if test="wpWorkcontext != null" >
+        #{wpWorkcontext,jdbcType=VARCHAR},
+      </if>
+      <if test="wpCreateTime != null" >
+        #{wpCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpUpdateTime != null" >
+        #{wpUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmWorkexp" >
+    update tbl_rsm_workexp
+    <set >
+      <if test="wpRlid != null" >
+        WP_RLID = #{wpRlid,jdbcType=INTEGER},
+      </if>
+      <if test="wpCompname != null" >
+        WP_COMPNAME = #{wpCompname,jdbcType=VARCHAR},
+      </if>
+      <if test="wpStarttime != null" >
+        WP_STARTTIME = #{wpStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpEndtime != null" >
+        WP_ENDTIME = #{wpEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpOccupation != null" >
+        WP_OCCUPATION = #{wpOccupation,jdbcType=VARCHAR},
+      </if>
+      <if test="wpWorkcontext != null" >
+        WP_WORKCONTEXT = #{wpWorkcontext,jdbcType=VARCHAR},
+      </if>
+      <if test="wpCreateTime != null" >
+        WP_CREATE_TIME = #{wpCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="wpUpdateTime != null" >
+        WP_UPDATE_TIME = #{wpUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where WP_ID = #{wpId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txs.resume.resumeuser.pojo.TblRsmWorkexp" >
+    update tbl_rsm_workexp
+    set WP_RLID = #{wpRlid,jdbcType=INTEGER},
+      WP_COMPNAME = #{wpCompname,jdbcType=VARCHAR},
+      WP_STARTTIME = #{wpStarttime,jdbcType=VARCHAR},
+      WP_ENDTIME = #{wpEndtime,jdbcType=VARCHAR},
+      WP_OCCUPATION = #{wpOccupation,jdbcType=VARCHAR},
+      WP_WORKCONTEXT = #{wpWorkcontext,jdbcType=VARCHAR},
+      WP_CREATE_TIME = #{wpCreateTime,jdbcType=VARCHAR},
+      WP_UPDATE_TIME = #{wpUpdateTime,jdbcType=VARCHAR}
+    where WP_ID = #{wpId,jdbcType=INTEGER}
+  </update>
+</mapper>

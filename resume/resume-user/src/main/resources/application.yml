@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: resume-user
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/resume?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  mvc:
+    static-path-pattern: /**
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 1000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 500
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+  instance:
+    hostname: localhost
+mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml

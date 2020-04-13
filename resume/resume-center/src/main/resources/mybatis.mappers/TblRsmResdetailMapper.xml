@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txs.resume.resumeuser.mapper.TblRsmResdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.txs.resume.resumeuser.pojo.TblRsmResdetail" >
+    <id column="RL_ID" property="rlId" jdbcType="INTEGER" />
+    <result column="RL_RSID" property="rlRsid" jdbcType="INTEGER" />
+    <result column="RL_NAME" property="rlName" jdbcType="VARCHAR" />
+    <result column="RL_SEX" property="rlSex" jdbcType="CHAR" />
+    <result column="RL_BIRTH" property="rlBirth" jdbcType="VARCHAR" />
+    <result column="RL_LOCAL" property="rlLocal" jdbcType="VARCHAR" />
+    <result column="RL_EMAIL" property="rlEmail" jdbcType="VARCHAR" />
+    <result column="RL_PHONE" property="rlPhone" jdbcType="VARCHAR" />
+    <result column="RL_CURREV" property="rlCurrev" jdbcType="DOUBLE" />
+    <result column="RL_EXPREV" property="rlExprev" jdbcType="DOUBLE" />
+    <result column="RL_SLFINR" property="rlSlfinr" jdbcType="VARCHAR" />
+    <result column="RL_OCCUPATION" property="rlOccupation" jdbcType="VARCHAR" />
+    <result column="RL_SCHOOL" property="rlSchool" jdbcType="VARCHAR" />
+    <result column="RL_CREATE_TIME" property="rlCreateTime" jdbcType="VARCHAR" />
+    <result column="RL_UPDATE_TIME" property="rlUpdateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RL_ID, RL_RSID, RL_NAME, RL_SEX, RL_BIRTH, RL_LOCAL, RL_EMAIL, RL_PHONE, RL_CURREV, 
+    RL_EXPREV, RL_SLFINR, RL_OCCUPATION, RL_SCHOOL, RL_CREATE_TIME, RL_UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_rsm_resdetail
+    where RL_ID = #{rlId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_rsm_resdetail
+    where RL_ID = #{rlId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResdetail" >
+    insert into tbl_rsm_resdetail (RL_ID, RL_RSID, RL_NAME, 
+      RL_SEX, RL_BIRTH, RL_LOCAL, 
+      RL_EMAIL, RL_PHONE, RL_CURREV, 
+      RL_EXPREV, RL_SLFINR, RL_OCCUPATION, 
+      RL_SCHOOL, RL_CREATE_TIME, RL_UPDATE_TIME
+      )
+    values (#{rlId,jdbcType=INTEGER}, #{rlRsid,jdbcType=INTEGER}, #{rlName,jdbcType=VARCHAR}, 
+      #{rlSex,jdbcType=CHAR}, #{rlBirth,jdbcType=VARCHAR}, #{rlLocal,jdbcType=VARCHAR}, 
+      #{rlEmail,jdbcType=VARCHAR}, #{rlPhone,jdbcType=VARCHAR}, #{rlCurrev,jdbcType=DOUBLE}, 
+      #{rlExprev,jdbcType=DOUBLE}, #{rlSlfinr,jdbcType=VARCHAR}, #{rlOccupation,jdbcType=VARCHAR}, 
+      #{rlSchool,jdbcType=VARCHAR}, #{rlCreateTime,jdbcType=VARCHAR}, #{rlUpdateTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResdetail" >
+    insert into tbl_rsm_resdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rlId != null" >
+        RL_ID,
+      </if>
+      <if test="rlRsid != null" >
+        RL_RSID,
+      </if>
+      <if test="rlName != null" >
+        RL_NAME,
+      </if>
+      <if test="rlSex != null" >
+        RL_SEX,
+      </if>
+      <if test="rlBirth != null" >
+        RL_BIRTH,
+      </if>
+      <if test="rlLocal != null" >
+        RL_LOCAL,
+      </if>
+      <if test="rlEmail != null" >
+        RL_EMAIL,
+      </if>
+      <if test="rlPhone != null" >
+        RL_PHONE,
+      </if>
+      <if test="rlCurrev != null" >
+        RL_CURREV,
+      </if>
+      <if test="rlExprev != null" >
+        RL_EXPREV,
+      </if>
+      <if test="rlSlfinr != null" >
+        RL_SLFINR,
+      </if>
+      <if test="rlOccupation != null" >
+        RL_OCCUPATION,
+      </if>
+      <if test="rlSchool != null" >
+        RL_SCHOOL,
+      </if>
+      <if test="rlCreateTime != null" >
+        RL_CREATE_TIME,
+      </if>
+      <if test="rlUpdateTime != null" >
+        RL_UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rlId != null" >
+        #{rlId,jdbcType=INTEGER},
+      </if>
+      <if test="rlRsid != null" >
+        #{rlRsid,jdbcType=INTEGER},
+      </if>
+      <if test="rlName != null" >
+        #{rlName,jdbcType=VARCHAR},
+      </if>
+      <if test="rlSex != null" >
+        #{rlSex,jdbcType=CHAR},
+      </if>
+      <if test="rlBirth != null" >
+        #{rlBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="rlLocal != null" >
+        #{rlLocal,jdbcType=VARCHAR},
+      </if>
+      <if test="rlEmail != null" >
+        #{rlEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="rlPhone != null" >
+        #{rlPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="rlCurrev != null" >
+        #{rlCurrev,jdbcType=DOUBLE},
+      </if>
+      <if test="rlExprev != null" >
+        #{rlExprev,jdbcType=DOUBLE},
+      </if>
+      <if test="rlSlfinr != null" >
+        #{rlSlfinr,jdbcType=VARCHAR},
+      </if>
+      <if test="rlOccupation != null" >
+        #{rlOccupation,jdbcType=VARCHAR},
+      </if>
+      <if test="rlSchool != null" >
+        #{rlSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="rlCreateTime != null" >
+        #{rlCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rlUpdateTime != null" >
+        #{rlUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResdetail" >
+    update tbl_rsm_resdetail
+    <set >
+      <if test="rlRsid != null" >
+        RL_RSID = #{rlRsid,jdbcType=INTEGER},
+      </if>
+      <if test="rlName != null" >
+        RL_NAME = #{rlName,jdbcType=VARCHAR},
+      </if>
+      <if test="rlSex != null" >
+        RL_SEX = #{rlSex,jdbcType=CHAR},
+      </if>
+      <if test="rlBirth != null" >
+        RL_BIRTH = #{rlBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="rlLocal != null" >
+        RL_LOCAL = #{rlLocal,jdbcType=VARCHAR},
+      </if>
+      <if test="rlEmail != null" >
+        RL_EMAIL = #{rlEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="rlPhone != null" >
+        RL_PHONE = #{rlPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="rlCurrev != null" >
+        RL_CURREV = #{rlCurrev,jdbcType=DOUBLE},
+      </if>
+      <if test="rlExprev != null" >
+        RL_EXPREV = #{rlExprev,jdbcType=DOUBLE},
+      </if>
+      <if test="rlSlfinr != null" >
+        RL_SLFINR = #{rlSlfinr,jdbcType=VARCHAR},
+      </if>
+      <if test="rlOccupation != null" >
+        RL_OCCUPATION = #{rlOccupation,jdbcType=VARCHAR},
+      </if>
+      <if test="rlSchool != null" >
+        RL_SCHOOL = #{rlSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="rlCreateTime != null" >
+        RL_CREATE_TIME = #{rlCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rlUpdateTime != null" >
+        RL_UPDATE_TIME = #{rlUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RL_ID = #{rlId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txs.resume.resumeuser.pojo.TblRsmResdetail" >
+    update tbl_rsm_resdetail
+    set RL_RSID = #{rlRsid,jdbcType=INTEGER},
+      RL_NAME = #{rlName,jdbcType=VARCHAR},
+      RL_SEX = #{rlSex,jdbcType=CHAR},
+      RL_BIRTH = #{rlBirth,jdbcType=VARCHAR},
+      RL_LOCAL = #{rlLocal,jdbcType=VARCHAR},
+      RL_EMAIL = #{rlEmail,jdbcType=VARCHAR},
+      RL_PHONE = #{rlPhone,jdbcType=VARCHAR},
+      RL_CURREV = #{rlCurrev,jdbcType=DOUBLE},
+      RL_EXPREV = #{rlExprev,jdbcType=DOUBLE},
+      RL_SLFINR = #{rlSlfinr,jdbcType=VARCHAR},
+      RL_OCCUPATION = #{rlOccupation,jdbcType=VARCHAR},
+      RL_SCHOOL = #{rlSchool,jdbcType=VARCHAR},
+      RL_CREATE_TIME = #{rlCreateTime,jdbcType=VARCHAR},
+      RL_UPDATE_TIME = #{rlUpdateTime,jdbcType=VARCHAR}
+    where RL_ID = #{rlId,jdbcType=INTEGER}
+  </update>
+</mapper>

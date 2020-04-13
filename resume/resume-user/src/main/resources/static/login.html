@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>松松松简历系统</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+<div class="lowin">
+    <div class="lowin-brand">
+        <img src="img/kodinger.jpg" alt="logo">
+    </div>
+    <div class="lowin-wrapper">
+        <div class="lowin-box lowin-login">
+            <div class="lowin-box-inner">
+                <form>
+                    <p>登录系统</p>
+                    <div class="lowin-group">
+                        <label>邮箱 <a href="#" class="login-back-link">登录?</a></label>
+                        <input type="email" autocomplete="email" id="loginEmail" name="email" class="lowin-input">
+                    </div>
+                    <div class="lowin-group password-group">
+                        <label>密码 </label>
+                        <input type="password" name="password" id="loginPassword" autocomplete="current-password"
+                               class="lowin-input">
+                        <input type="hidden" name="redirect_uri" id="redirect_uri"/>
+                    </div>
+                    <button type="button" class="lowin-btn login-btn" id="loginbtn">
+                        登录
+                    </button>
+                    <div class="text-foot">
+                        没有账户? <a href="" class="register-link">去注册</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="lowin-box lowin-register">
+            <div class="lowin-box-inner">
+                <form>
+                    <p>创建你的账户</p>
+                    <div class="lowin-group">
+                        <label>姓名</label>
+                        <input type="text" name="name" id="name" autocomplete="name" class="lowin-input">
+                    </div>
+                    <div class="lowin-group">
+                        <label>邮箱</label><input type="button" id="sendCode" value="获取验证码"/>
+                        <input type="email" autocomplete="email" id="email" name="email" class="lowin-input">
+                    </div>
+                    <div class="lowin-group">
+                        <label>验证码 </label>
+                        <input type="text" autocomplete="code" id="code" name="code" class="lowin-input">
+                    </div>
+                    <div class="lowin-group">
+                        <label>密码</label>
+                        <input type="password" name="password" id="password" autocomplete="current-password"
+                               class="lowin-input">
+                    </div>
+                    <button class="lowin-btn" id="regbtn">
+                        注册
+                    </button>
+                    <div class="text-foot">
+                        早就有账户了? <a href="" class="login-link">去登录</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+    Auth.init({
+        login_url: '#login',
+        forgot_url: '#forgot'
+    });
+
+
+    $('#sendCode').click(function () {
+        $.ajax({
+            url: "/user/sendEmail",
+            type: "POST",
+            data: {
+                email: $("#email").val()
+            },
+            success: function (data) {
+                if (data == "false") {
+                    alert("该邮箱已注册或填写的邮箱有误");
+                } else {
+                    //设置按钮倒计时
+                    $('#sendCode').attr('disabled', true); //把按钮变灰
+                    var time = 60;
+                    $('#sendCode').val(time + 's'); //把按钮变成秒数显示
+                    var i = setInterval(function () {
+                        if (time <= 0) {
+                            clearInterval(i); //清楚倒计时
+                            $('#sendCode').attr('disabled', false); //把灰色按钮变成还原
+                            $('#sendCode').val('获取验证码'); //把灰色按钮变成还原
+                            return false;
+                        }
+                        time--; //时间自动减1
+                        $('#sendCode').val(time + 's'); //把按钮变成秒数显示 自动减1后的
+                    }, 1000); //每秒执行一下
+                }
+            },
+            error: function () {
+                alert("网络错误，请联系管理员");
+            }
+        });
+
+
+    });
+
+    $('#regbtn').click(function () {
+        $.ajax({
+            url: "/user/register",
+            type: "POST",
+            data: {
+                email: $("#email").val(),
+                name: $("#name").val(),
+                password: $("#password").val(),
+                code: $("#code").val()
+            },
+            success: function (data) {
+                if (data == "codeError") {
+                    alert("验证码错误");
+                } else if (data == "hasError") {
+                    alert("该邮箱已注册");
+                } else {
+                    alert("注册成功");
+                }
+            },
+            error: function () {
+                alert("网络错误，请联系管理员");
+            }
+        });
+
+
+    });
+
+    $('#loginbtn').click(function () {
+        $.ajax({
+            url: "/user/login",
+            type: "POST",
+            data: {
+                email: $("#loginEmail").val(),
+                password: $("#loginPassword").val()
+            },
+            success: function (data) {
+                if (data == "false") {
+                    alert("邮箱或密码错误");
+                } else {
+                    var redirect_uri=getQueryVariable("redirect_uri");
+                    if(redirect_uri!=null&&redirect_uri!=''){
+                        location.href=redirect_uri+"?token="+data;
+                    }
+                }
+            },
+            error: function () {
+                alert("网络错误，请联系管理员");
+            }
+        });
+    });
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+</script>
+</body>
+</html>

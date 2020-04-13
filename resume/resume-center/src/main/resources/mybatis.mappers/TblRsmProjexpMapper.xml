@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txs.resume.resumeuser.mapper.TblRsmProjexpMapper" >
+  <resultMap id="BaseResultMap" type="com.txs.resume.resumeuser.pojo.TblRsmProjexp" >
+    <id column="PP_ID" property="ppId" jdbcType="INTEGER" />
+    <result column="PP_WPID" property="ppWpid" jdbcType="INTEGER" />
+    <result column="PP_NAME" property="ppName" jdbcType="VARCHAR" />
+    <result column="PP_STARTTIME" property="ppStarttime" jdbcType="VARCHAR" />
+    <result column="PP_ENDTIME" property="ppEndtime" jdbcType="VARCHAR" />
+    <result column="PP_PROJDESC" property="ppProjdesc" jdbcType="VARCHAR" />
+    <result column="PP_WORKDESC" property="ppWorkdesc" jdbcType="VARCHAR" />
+    <result column="PP_CREATE_TIME" property="ppCreateTime" jdbcType="VARCHAR" />
+    <result column="PP_UPDATE_TIME" property="ppUpdateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PP_ID, PP_WPID, PP_NAME, PP_STARTTIME, PP_ENDTIME, PP_PROJDESC, PP_WORKDESC, PP_CREATE_TIME, 
+    PP_UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_rsm_projexp
+    where PP_ID = #{ppId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_rsm_projexp
+    where PP_ID = #{ppId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txs.resume.resumeuser.pojo.TblRsmProjexp" >
+    insert into tbl_rsm_projexp (PP_ID, PP_WPID, PP_NAME, 
+      PP_STARTTIME, PP_ENDTIME, PP_PROJDESC, 
+      PP_WORKDESC, PP_CREATE_TIME, PP_UPDATE_TIME
+      )
+    values (#{ppId,jdbcType=INTEGER}, #{ppWpid,jdbcType=INTEGER}, #{ppName,jdbcType=VARCHAR}, 
+      #{ppStarttime,jdbcType=VARCHAR}, #{ppEndtime,jdbcType=VARCHAR}, #{ppProjdesc,jdbcType=VARCHAR}, 
+      #{ppWorkdesc,jdbcType=VARCHAR}, #{ppCreateTime,jdbcType=VARCHAR}, #{ppUpdateTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmProjexp" >
+    insert into tbl_rsm_projexp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ppId != null" >
+        PP_ID,
+      </if>
+      <if test="ppWpid != null" >
+        PP_WPID,
+      </if>
+      <if test="ppName != null" >
+        PP_NAME,
+      </if>
+      <if test="ppStarttime != null" >
+        PP_STARTTIME,
+      </if>
+      <if test="ppEndtime != null" >
+        PP_ENDTIME,
+      </if>
+      <if test="ppProjdesc != null" >
+        PP_PROJDESC,
+      </if>
+      <if test="ppWorkdesc != null" >
+        PP_WORKDESC,
+      </if>
+      <if test="ppCreateTime != null" >
+        PP_CREATE_TIME,
+      </if>
+      <if test="ppUpdateTime != null" >
+        PP_UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ppId != null" >
+        #{ppId,jdbcType=INTEGER},
+      </if>
+      <if test="ppWpid != null" >
+        #{ppWpid,jdbcType=INTEGER},
+      </if>
+      <if test="ppName != null" >
+        #{ppName,jdbcType=VARCHAR},
+      </if>
+      <if test="ppStarttime != null" >
+        #{ppStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppEndtime != null" >
+        #{ppEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppProjdesc != null" >
+        #{ppProjdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ppWorkdesc != null" >
+        #{ppWorkdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ppCreateTime != null" >
+        #{ppCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppUpdateTime != null" >
+        #{ppUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txs.resume.resumeuser.pojo.TblRsmProjexp" >
+    update tbl_rsm_projexp
+    <set >
+      <if test="ppWpid != null" >
+        PP_WPID = #{ppWpid,jdbcType=INTEGER},
+      </if>
+      <if test="ppName != null" >
+        PP_NAME = #{ppName,jdbcType=VARCHAR},
+      </if>
+      <if test="ppStarttime != null" >
+        PP_STARTTIME = #{ppStarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppEndtime != null" >
+        PP_ENDTIME = #{ppEndtime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppProjdesc != null" >
+        PP_PROJDESC = #{ppProjdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ppWorkdesc != null" >
+        PP_WORKDESC = #{ppWorkdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ppCreateTime != null" >
+        PP_CREATE_TIME = #{ppCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ppUpdateTime != null" >
+        PP_UPDATE_TIME = #{ppUpdateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PP_ID = #{ppId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txs.resume.resumeuser.pojo.TblRsmProjexp" >
+    update tbl_rsm_projexp
+    set PP_WPID = #{ppWpid,jdbcType=INTEGER},
+      PP_NAME = #{ppName,jdbcType=VARCHAR},
+      PP_STARTTIME = #{ppStarttime,jdbcType=VARCHAR},
+      PP_ENDTIME = #{ppEndtime,jdbcType=VARCHAR},
+      PP_PROJDESC = #{ppProjdesc,jdbcType=VARCHAR},
+      PP_WORKDESC = #{ppWorkdesc,jdbcType=VARCHAR},
+      PP_CREATE_TIME = #{ppCreateTime,jdbcType=VARCHAR},
+      PP_UPDATE_TIME = #{ppUpdateTime,jdbcType=VARCHAR}
+    where PP_ID = #{ppId,jdbcType=INTEGER}
+  </update>
+</mapper>
