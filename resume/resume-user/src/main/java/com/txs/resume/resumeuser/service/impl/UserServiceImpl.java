@@ -7,16 +7,22 @@ import com.txs.resume.resumeuser.service.UserService;
 import com.txs.resume.resumeuser.utils.CodeUtils;
 import com.txs.resume.resumeuser.utils.DateUtils;
 import com.txs.resume.resumeuser.utils.MD5Utils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private TblCsmUserMapper tblCsmUserMapper;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
 
     //发送注册邮件
     @Override
@@ -32,6 +38,10 @@ public class UserServiceImpl implements UserService {
         //生成六位数作为验证码
         String code = CodeUtils.createCode();
         //此处调用rabiitMQ通知邮箱服务发送邮件给对应邮箱.
+        Map<String,String> map = new HashMap<>();
+        map.put("email", email);
+        map.put("code", code);
+        rabbitTemplate.convertAndSend("email", map);
         return code;
     }
 

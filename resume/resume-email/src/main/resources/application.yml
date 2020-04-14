@@ -1,19 +1,33 @@
-# Ö¸¶¨ÔËÐÐ¶Ë¿Ú
+# Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ë¿ï¿½
 server:
   port: 8081
 
-# Ö¸¶¨·þÎñÃû³Æ
+# Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 spring:
   application:
     name: resume-email
+  mail:
+    host: smtp.163.com
+    username: t943044085@163.com
+    password: RIBQYMASMCALNPAR
+    default-encoding: UTF-8
+    protocol: smtp
+    port: 25
 
-# Ö¸¶¨Ö÷»úµØÖ·
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /test
+# Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
 eureka:
   client:
-    # ×¢²áµ½EurekaµÄ×¢²áÖÐÐÄ
+    # ×¢ï¿½áµ½Eurekaï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     register-with-eureka: true
-    # »ñÈ¡×¢²áÊµÀýÁÐ±í
+    # ï¿½ï¿½È¡×¢ï¿½ï¿½Êµï¿½ï¿½ï¿½Ð±ï¿½
     fetch-registry: true
     service-url:
-      # ÅäÖÃ×¢²áÖÐÐÄµØÖ·
+      # ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ö·
       defaultZone: http://localhost:8001/eureka
